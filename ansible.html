@@ -12,17 +12,86 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="ansible.html">Ansible</a></li>
                 <li><a href="terraform.html">Terraform</a></li>
                 <li><a href="jenkins.html">Jenkins Integration</a></li>
+                <li><a href="sonarqube.html">SonarQube</a></li>
                 <li><a href="guvi-scripts.html">Guvi Scripts</a></li>
+                <li><a href="best-practices.html">Best Practices</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <!-- Content specific to Ansible goes here -->
         <section>
-            <h2>Infrastructure Automation with Ansible</h2>
-            <p>Learn how to automate infrastructure using Ansible.</p>
+            <h2>Ansible - Infrastructure Automation</h2>
+            <p>Ansible is an open-source automation tool that simplifies the configuration management, application deployment, and task automation in the DevOps workflow. Below are examples of Ansible playbooks for creating a virtual machine (VM) and a container.</p>
+        </section>
+
+        <section>
+            <h3>Example 1: Creating a Virtual Machine</h3>
+            <p>Below is an Ansible playbook that uses the Ansible VMware module to create a virtual machine:</p>
+            <pre>
+<code>
+---
+- name: Create Virtual Machine
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Deploy VM
+      community.vmware.vmware_vm_dvswitch:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        validate_certs: no
+        datacenter_name: "{{ datacenter }}"
+        cluster_name: "{{ cluster }}"
+        datastore_name: "{{ datastore }}"
+        folder: "{{ folder }}"
+        name: "{{ vm_name }}"
+        state: poweredon
+        guest_id: "{{ guest_os }}"
+        hardware:
+          memory_mb: "{{ memory_mb }}"
+          num_cpus: "{{ num_cpus }}"
+          scsi: "{{ scsi }}"
+          networks:
+            - name: "{{ network }}"
+              dvswitch_name: "{{ dvswitch }}"
+              portgroup_name: "{{ portgroup }}"
+</code>
+</pre>
+            <p>Modify the variables (e.g., `vcenter_hostname`, `vm_name`, etc.) according to your environment.</p>
+        </section>
+
+        <section>
+            <h3>Example 2: Creating a Container</h3>
+            <p>Below is an Ansible playbook that uses the Ansible Docker module to create a container:</p>
+            <pre>
+<code>
+---
+- name: Create Docker Container
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Pull Docker Image
+      docker_image:
+        name: "{{ docker_image }}"
+        source: pull
+
+    - name: Run Docker Container
+      docker_container:
+        name: "{{ container_name }}"
+        image: "{{ docker_image }}"
+        state: started
+        restart_policy: always
+        ports:
+          - "{{ host_port }}:{{ container_port }}"
+        volumes:
+          - "{{ host_volume }}:{{ container_volume }}"
+</code>
+</pre>
+            <p>Adjust the variables (e.g., `docker_image`, `container_name`, etc.) based on your Docker image and container settings.</p>
         </section>
     </main>
     <footer>
