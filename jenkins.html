@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automating CI/CD with Jenkins - DevOps Knowledge Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>DevOps Knowledge Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ansible.html">Ansible</a></li>
+                <li><a href="terraform.html">Terraform</a></li>
+                <li><a href="guvi-scripts.html">Guvi Scripts</a></li>
+                <li><a href="sonarqube.html">SonarQube</a></li>
+                <li><a href="jenkins.html">Jenkins Integration</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Automating CI/CD with Jenkins</h2>
+            <p>Continuous Integration (CI) and Continuous Deployment (CD) help streamline the software delivery process. Here's how to set up a basic CI/CD pipeline with Jenkins:</p>
+        </section>
+        <section>
+            <h3>Step 1: Install and Configure Jenkins</h3>
+            <p>Download and install Jenkins on your server. Follow the installation wizard to complete the initial setup. Make sure to install required plugins such as Git, Pipeline, and any other plugins relevant to your project.</p>
+        </section>
+        <section>
+            <h3>Step 2: Create a New Jenkins Job</h3>
+            <p>1. Open the Jenkins web interface and click on "New Item."</p>
+            <p>2. Enter a name for your job and select the type of project (Freestyle project or Pipeline).</p>
+            <p>3. Configure your job settings, including source code management (e.g., Git), build triggers, and build steps.</p>
+        </section>
+        <section>
+            <h3>Step 3: Define a Jenkins Pipeline (If using Pipeline)</h3>
+            <p>1. Use Jenkinsfile: Create a Jenkinsfile at the root of your project. Define stages, steps, and post actions in the Jenkinsfile.</p>
+            <p>2. Pipeline Syntax: Use the Pipeline Syntax tool in Jenkins to generate pipeline code based on your requirements.</p>
+        </section>
+        <section>
+            <h3>Step 4: Integrate Testing and Quality Checks</h3>
+            <p>1. Add testing steps to your CI/CD pipeline to ensure code quality.</p>
+            <p>2. Integrate tools like SonarQube for code analysis and quality metrics.</p>
+        </section>
+        <section>
+            <h3>Step 5: Configure Deployment Steps</h3>
+            <p>1. Add deployment steps to your pipeline for staging and production environments.</p>
+            <p>2. Use tools like Ansible or Terraform for infrastructure provisioning and deployment.</p>
+        </section>
+        <section>
+            <h3>Step 6: Set Up Notifications and Monitoring</h3>
+            <p>1. Configure email notifications for build results and failures.</p>
+            <p>2. Use Jenkins plugins or external tools for monitoring and logging.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 DevOps Knowledge Hub. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terraform - DevOps Knowledge Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>DevOps Knowledge Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ansible.html">Ansible</a></li>
+                <li><a href="jenkins.html">Jenkins Integration</a></li>
+                <li><a href="guvi-scripts.html">Guvi Scripts</a></li>
+                <li><a href="sonarqube.html">SonarQube</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Terraform - Infrastructure as Code</h2>
+            <p>Terraform is an open-source infrastructure as code software tool created by HashiCorp.</p>
+            <p>Key features:</p>
+            <ul>
+                <li>Declarative configuration language</li>
+                <li>Resource provisioning and orchestration</li>
+                <li>Support for multiple cloud providers and on-premises infrastructure</li>
+                <li>Plan and apply changes with version-controlled configurations</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Getting Started with Terraform</h2>
+            <p>To start using Terraform:</p>
+            <ol>
+                <li>Install Terraform on your machine.</li>
+                <li>Create a new directory for your Terraform configuration.</li>
+                <li>Write a Terraform configuration file (e.g., `main.tf`).</li>
+                <li>Initialize the configuration with `terraform init`.</li>
+                <li>Review the execution plan with `terraform plan`.</li>
+                <li>Apply the changes with `terraform apply`.</li>
+            </ol>
+            <p>Example `main.tf`:</p>
+            <pre>
+                <code>
+provider "aws" {
+  region = "us-west-2"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+}
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h2>Terraform Best Practices</h2>
+            <p>Follow these best practices when using Terraform:</p>
+            <ul>
+                <li>Use version control for your Terraform configurations.</li>
+                <li>Separate configurations based on environments (dev, staging, prod).</li>
+                <li>Keep sensitive information secure using environment variables or secure parameter stores.</li>
+                <li>Regularly update Terraform and provider versions.</li>
+                <li>Test changes in a safe environment before applying to production.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 DevOps Knowledge Hub. All rights reserved.</p>
+    </footer>
+</body>
+</html>
